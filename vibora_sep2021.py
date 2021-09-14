@@ -24,6 +24,9 @@ i = randint(0,4)
 # Random de colores diferentes para la comida
 j = randint(0,4)
 
+if (i==j):
+    j = randint(0,4)
+
 def change(x, y):
     "Change snake direction."
     aim.x = x
