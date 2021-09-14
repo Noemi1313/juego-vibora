@@ -11,6 +11,7 @@ Exercises
 
 from random import *
 from turtle import *
+from random import randint
 
 from freegames import square, vector
 
@@ -34,7 +35,6 @@ def change(x, y):
     "Randomizar la posición de la comida"
     food.x = randrange(-15, 15) * 1
     food.y = randrange(-15, 15) * 1
-
 
 def inside(head):
     "Return True if head inside boundaries."
