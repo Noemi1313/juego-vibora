@@ -11,6 +11,7 @@ Exercises
 
 from random import randrange
 from turtle import *
+from random import randint
 
 from freegames import square, vector
 
@@ -23,7 +24,10 @@ def change(x, y):
     "Change snake direction."
     aim.x = x
     aim.y = y
-
+    
+#funcion para randomizar la comida
+    food.x = randrange(-15, 15) * 1
+    food.y = randrange(-15, 15) * 1
 
 def inside(head):
     "Return True if head inside boundaries."
