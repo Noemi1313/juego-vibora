@@ -9,7 +9,7 @@ Exercises
 
 """
 
-from random import randrange
+from random import *
 from turtle import *
 
 from freegames import square, vector
@@ -18,11 +18,19 @@ food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
 
+colors = ["yellow", "orange", "pink", "blue", "green"]
+# Random de colores diferentes para la víbora
+i = randint(0,4)
+# Random de colores diferentes para la comida
+j = randint(0,4)
 
 def change(x, y):
     "Change snake direction."
     aim.x = x
     aim.y = y
+    "Randomizar la posición de la comida"
+    food.x = randrange(-15, 15) * 1
+    food.y = randrange(-15, 15) * 1
 
 
 def inside(head):
@@ -52,9 +60,9 @@ def move():
     clear()
 
     for body in snake:
-        square(body.x, body.y, 9, 'black')
+        square(body.x, body.y, 9, colors[i])
 
-    square(food.x, food.y, 9, 'green')
+    square(food.x, food.y, 9, colors[j])
     update()
     ontimer(move, 100)
 
